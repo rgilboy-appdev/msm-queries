@@ -1,0 +1,140 @@
+<h1>
+  Director #<%= @director_id%> details
+</h1>
+
+<a href="/directors" class="btn btn-block btn-outline-secondary">
+  Go back
+</a>
+
+&nbsp;|&nbsp;
+
+<a href="/delete_director/<%=@director_id%>" class="btn btn-block btn-outline-secondary">
+  Delete director
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Name
+  </dt>
+  <dd>
+    <%= @director.name %>
+  </dd>
+
+  <dt>
+    Dob
+  </dt>
+  <dd>
+    <%= @director.dob %>
+  </dd>
+
+  <dt>
+    Bio
+  </dt>
+  <dd>
+    <%= @director.bio %>
+  </dd>
+
+  <dt>
+    Image
+  </dt>
+  <dd>
+    <img src="<%= @director.image%> style="width:250px;">
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%=time_ago_in_words(@director.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@director.updated_at) %> ago
+  </dd>
+</dl>
+
+<hr>
+
+<h2>Filmography</h2>
+
+<table border="1">
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Image
+    </th>
+
+    <th>
+      Title
+    </th>
+
+    <th>
+      Year
+    </th>
+
+    <th>
+      Director
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <tr>
+    <td>
+      1
+    </td>
+
+    <td>
+      <img src="https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg" style="width:250px;">
+    </td>
+
+    <td>
+      The Shawshank Redemption
+    </td>
+
+    <td>
+      1994
+    </td>
+
+    <td>
+      Frank Darabont
+    </td>
+
+    <td>
+      <a href="/movies/1">
+        Show details
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+<a href = "/directors"> Go back </a>
+
+<p> Name </p>
+<%= @director.name %>
+
+<p> Dob </p>
+<%= @director.dob %>
+
+<p> Bio </p>
+<%= @director.bio %>
+
+<p> Image </p>
+<img src = "<%= @director.image%>">
