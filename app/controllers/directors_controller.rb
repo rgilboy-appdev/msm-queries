@@ -37,6 +37,9 @@ def details
 
   @director = Director.where(:id => @director_id).first
 
+  @filmography = Movie.where(:director_id => @director_id)
+
+
   render({:template => "director_templates/details.html.erb"})
 
 end

@@ -88,53 +88,36 @@
     </th>
   </tr>
 
+
+<% @filmography.each do |film| %>
   <tr>
+
     <td>
-      1
+      <%= film.id%>
     </td>
 
     <td>
-      <img src="https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg" style="width:250px;">
+      <img src="<%=film.image%>" style="width:250px;">
     </td>
 
     <td>
-      The Shawshank Redemption
+      <%= film.title %>
     </td>
 
     <td>
-      1994
+      <%= film.year %>
     </td>
 
     <td>
-      Frank Darabont
+      <%= @director.name %>
     </td>
 
     <td>
-      <a href="/movies/1">
+      <a href="/movies/<%= film.id%>">
         Show details
       </a>
     </td>
   </tr>
+<% end %>
 </table>
 
-
-
-
-
-
-
-
-
-<a href = "/directors"> Go back </a>
-
-<p> Name </p>
-<%= @director.name %>
-
-<p> Dob </p>
-<%= @director.dob %>
-
-<p> Bio </p>
-<%= @director.bio %>
-
-<p> Image </p>
-<img src = "<%= @director.image%>">
